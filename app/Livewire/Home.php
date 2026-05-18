@@ -27,12 +27,12 @@ class Home extends Component
             ['svg' => 'home-assets/cards/football4.svg', 'top' => '68%', 'left' => '45%', 'url' => '/academy/kings-busaiteen'],
             ['svg' => 'home-assets/cards/football5.svg', 'top' => '37%', 'left' => '50%', 'url' => '/academy/kings-busaiteen'],
             ['svg' => 'home-assets/cards/football6.svg', 'top' => '85%', 'left' => '5%', 'url' => '/academy/kings-busaiteen'],
-             ],
+        ],
         'art' => [
             ['svg' => 'home-assets/cards/art1.svg', 'top' => '25%', 'left' => '5%', 'url' => '/academy/beyady-busaiteen'],
             ['svg' => 'home-assets/cards/art2.svg', 'top' => '55%', 'left' => '20%', 'url' => '/academy/beyady-busaiteen'],
             ['svg' => 'home-assets/cards/art3.svg', 'top' => '85%', 'left' => '10%', 'url' => '/academy/beyady-busaiteen'],
-                   ],
+        ],
         'basketball' => [
             ['svg' => 'home-assets/cards/basket1.svg', 'top' => '40%', 'left' => '25%', 'url' => '/academy/slam-dunk'],
         ],
@@ -40,12 +40,12 @@ class Home extends Component
             ['svg' => 'home-assets/cards/swimming1.svg', 'top' => '5%', 'left' => '5%', 'url' => '/academy/sharks-busaiteen'],
             ['svg' => 'home-assets/cards/swimming2.svg', 'top' => '65%', 'left' => '25%', 'url' => '/academy/sharks-busaiteen'],
             ['svg' => 'home-assets/cards/swimming3.svg', 'top' => '80%', 'left' => '15%', 'url' => '/academy/sharks-busaiteen'],
-                ],
+        ],
         'fitness' => [
             ['svg' => 'home-assets/cards/fitness1.svg', 'top' => '5%', 'left' => '0%', 'url' => '/academy/fitkid-busaiteen'],
             ['svg' => 'home-assets/cards/fitness2.svg', 'top' => '35%', 'left' => '15%', 'url' => '/academy/fitkid-busaiteen'],
             ['svg' => 'home-assets/cards/fitness3.svg', 'top' => '75%', 'left' => '15%', 'url' => '/academy/fitkid-busaiteen'],
-                   ],
+        ],
         'volleyball' => [
             ['svg' => 'home-assets/cards/volleyball.svg', 'top' => '40%', 'left' => '25%', 'url' => '/academy/bvc-muharraq'],
         ],
@@ -62,7 +62,7 @@ class Home extends Component
     }
 
     #[Computed]
-    public function filtered(): array
+    public function filtered(string $type = 'football'): array
     {
         $all = [
             ['name' => 'Kings Football Academy', 'location' => 'MMYC - Busaiteen', 'type' => 'football', 'logo' => 'home-assets/images/kings.svg', 'img' => 'home-assets/images/foot1.svg', 'btn' => '#2d1b6e'],
@@ -85,7 +85,7 @@ class Home extends Component
         ];
 
         return collect($all)
-            ->where('type', $this->filter)
+            ->where('type', $type)
             ->values()
             ->toArray();
     }
