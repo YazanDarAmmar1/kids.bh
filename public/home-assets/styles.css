@@ -1,0 +1,319 @@
+@font-face {
+    font-family: 'Intro';
+    src: url('/home-assets/fonts/Intro.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Intro', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background: linear-gradient(to bottom,
+    #ab81e8 0%,
+    #f2ece0 20%,
+    #f2ece0 50%,
+    #f2ece0 75%,
+    #f2ece0 100%
+    );
+    min-height: 100vh;
+    font-family: 'Intro', sans-serif;
+    display: flex;
+    justify-content: center;
+
+}
+
+.kb-app {
+    width: 400px;
+    min-height: 100vh;
+    background: linear-gradient(to bottom,
+    #ab81e8 0%,
+    #f2ece0 20%,
+    #f2ece0 100%
+    );
+    overflow: hidden;
+}
+
+.kb-header {
+    padding: 52px 22px 30px;
+    display: flex;
+    align-items: center;
+}
+
+.kb-body {
+    background: transparent;
+    padding: 20px 18px 24px;
+}
+
+
+.kb-logo {
+    font-family: 'Intro', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: #2d1b6e;
+    letter-spacing: -1.5px;
+    line-height: 1;
+}
+
+.kb-lang {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #2d1b6e;
+}
+
+.kb-toggle {
+    width: 44px;
+    height: 25px;
+    background: #2d1b6e;
+    border-radius: 13px;
+    position: relative;
+}
+
+.kb-dot {
+    width: 19px;
+    height: 19px;
+    background: #22c55e;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+
+/* ── Body (بعد الـ header) ── */
+.kb-body {
+    padding: 20px 18px 24px;
+    margin-top: -24px;
+    border-radius: 24px 24px 0 0;
+}
+
+/* ── View Switch ── */
+.kb-view-switch {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.kb-vbtn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 0;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Intro', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.kb-vbtn.active {
+    background: #f5b429;
+    color: #2d1b6e;
+    border: 2.5px solid #2d1b6e;
+}
+
+.kb-vbtn.idle {
+    background: white;
+    color: #888;
+    border: 2px solid #e5e7eb;
+}
+
+/* ── Filters ── */
+.kb-hint {
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.kb-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.kb-chip {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Intro', sans-serif;
+    width: auto;
+}
+
+.c-football {
+    background: #f5b429;
+    color: #2d1b6e;
+    border: 2px solid #2d1b6e;
+}
+
+.c-swimming {
+    background: #004FED;
+    color: white;
+}
+
+.c-fitness {
+    background: #03c157;
+    color: #052e16;
+}
+
+.c-basketball {
+    background: #e8d5c4;
+    color: #9a6b4b;
+}
+
+.c-volleyball {
+    background: #d9d0f0;
+    color: #5a4a9a;
+}
+
+.c-art {
+    background: #ed5929;
+    color: white;
+}
+
+/* ── Chip states ── */
+.kb-chip.active {
+    opacity: 1;
+    box-shadow: 0 0 0 3px rgba(45, 27, 110, .25);
+    transform: scale(1.05);
+}
+
+.kb-chip.passive {
+    opacity: .45;
+}
+
+.kb-chip-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* ── Divider ── */
+.kb-divider {
+    height: 1px;
+    background: #ddd6fe;
+    margin: 14px 0;
+}
+
+/* ── List ── */
+.kb-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.kb-lcard {
+    background: white;
+    border-radius: 16px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .07);
+    border: 1px solid #f0ebff;
+}
+
+.kb-lcard-img {
+    width: 66px;
+    height: 66px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.kb-lcard-logo {
+    width: 66px;
+    height: 66px;
+    border-radius: 8px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.kb-lcard-body {
+    flex: 1;
+}
+
+.kb-lcard-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1032;
+    margin-bottom: 3px;
+}
+
+.kb-lcard-loc {
+    font-size: 11px;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 7px;
+}
+
+.kb-lcard-loc svg {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+}
+
+.kb-lcard-btn {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 4px 11px;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Intro', sans-serif;
+}
+
+
+.kb-map {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.kb-map-img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+}
+
+.kb-map-card {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    transition: transform .15s;
+}
+
+.kb-map-card:active {
+    transform: scale(.96);
+}
+
+.kb-map-card-img {
+    width: 170px; /* عدل الحجم حسب بطاقاتك */
+    display: block;
+}
+
+.kb-vbtn-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
