@@ -6,6 +6,7 @@
     <title>{{ $title ?? config('app.name') }}</title>
 
     @livewireStyles
+    @stack('head')
     <link rel="stylesheet" href="{{ asset('home-assets/styles.css') }}"/>
 </head>
 <body>

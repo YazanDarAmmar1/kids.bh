@@ -1,3 +1,14 @@
+@push('head')
+    @foreach($maps as $src)
+        <link rel="preload" as="image" href="{{ asset($src) }}">
+    @endforeach
+    @foreach($cards as $sportCards)
+        @foreach($sportCards as $card)
+            <link rel="preload" as="image" href="{{ asset($card['svg']) }}">
+        @endforeach
+    @endforeach
+@endpush
+
 <div>
     {{-- View Switch --}}
     <div class="kb-view-switch">
