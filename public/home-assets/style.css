@@ -140,14 +140,15 @@ body {
 }
 
 .kb-chips {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
 }
 
 .kb-chip {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
     padding: 5px 14px;
     border-radius: 50px;
@@ -156,6 +157,10 @@ body {
     cursor: pointer;
     font-family: 'Intro', sans-serif;
     width: auto;
+}
+
+.kb-chip:last-child:nth-child(odd) {
+    grid-column: span 2;
 }
 
 .c-football {
