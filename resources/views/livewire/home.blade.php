@@ -11,13 +11,12 @@
 
 <div x-data="{ filter: 'football', view: 'list' }">
 
-    {{-- View Switch --}}
-    <div class="kb-view-switch">
-        <button class="kb-vbtn" :class="view === 'list' ? 'active' : 'idle'"
+    <div class="kb-toggle-switch">
+        <button class="kb-toggle-btn kb-vbtn" :class="view === 'list' ? 'active' : ''"
                 @click="view = 'list'">
             <img src="{{ asset('home-assets/images/list-icon.svg') }}" class="kb-vbtn-icon"> LIST
         </button>
-        <button class="kb-vbtn" :class="view === 'map' ? 'active' : 'idle'"
+        <button class="kb-toggle-btn" :class="view === 'map' ? 'active' : ''"
                 @click="view = 'map'">
             <img src="{{ asset('home-assets/images/map-icon.svg') }}" class="kb-vbtn-icon"> MAP
         </button>
@@ -35,14 +34,15 @@
                  @click="filter = 'swimming'">
                 <img src="{{ asset('home-assets/images/swm.svg') }}" class="kb-chip-icon"> Swimming
             </div>
-            <div class="kb-chip c-fitness" :class="filter === 'fitness' ? 'active' : 'passive'"
-                 @click="filter = 'fitness'">
-                <img src="{{ asset('home-assets/images/run.svg') }}" class="kb-chip-icon"> Fitness
-            </div>
             <div class="kb-chip c-basketball" :class="filter === 'basketball' ? 'active' : 'passive'"
                  @click="filter = 'basketball'">
                 <img src="{{ asset('home-assets/images/basket.svg') }}" class="kb-chip-icon"> Basketball
             </div>
+            <div class="kb-chip c-fitness" :class="filter === 'fitness' ? 'active' : 'passive'"
+                 @click="filter = 'fitness'">
+                <img src="{{ asset('home-assets/images/run.svg') }}" class="kb-chip-icon"> Fitness
+            </div>
+
             <div class="kb-chip c-volleyball" :class="filter === 'volleyball' ? 'active' : 'passive'"
                  @click="filter = 'volleyball'">
                 <img src="{{ asset('home-assets/images/voll.svg') }}" class="kb-chip-icon"> Volleyball
@@ -61,7 +61,7 @@
         @foreach(['football','swimming','fitness','basketball','volleyball','art'] as $type)
             <div x-show="filter === '{{ $type }}'" class="kb-list">
                 @foreach($this->filtered($type) as $academy)
-                    <div class="kb-lcard">
+                    <a href="{{ $academy['url'] }}" target="_blank" class="kb-lcard">
                         <img src="{{ asset($academy['img']) }}" class="kb-lcard-img">
                         <img src="{{ asset($academy['logo']) }}" class="kb-lcard-logo">
                         <div class="kb-lcard-body">
@@ -74,7 +74,7 @@
                                 For Details Click Here
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         @endforeach
@@ -86,7 +86,7 @@
             <div x-show="filter === '{{ $type }}'" class="kb-map">
                 <img src="{{ asset($src) }}" class="kb-map-img">
                 @foreach($cards[$type] as $card)
-                    <a href="{{ $card['url'] }}" class="kb-map-card"
+                    <a href="{{ $card['url'] }}" target="_blank" class="kb-map-card"
                        style="top:{{ $card['top'] }}; left:{{ $card['left'] }};">
                         <img src="{{ asset($card['svg']) }}" class="kb-map-card-img">
                     </a>
