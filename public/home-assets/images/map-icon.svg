@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="37" height="30" fill="none"><g clip-path="url(#a)"><path stroke="#3D0D75" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="M24.296 7.333 12.148 2.444l-10.63 4.89v19.555L12.149 22M24.296 7.333l10.63-4.889V22l-10.63 4.889L12.148 22m0 0V2.444M24.296 26.89V7.333"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h36.444v29.333H0z"/></clipPath></defs></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="px" height="px" viewBox="0 0 28 23" version="1.1">
+<defs>
+<clipPath id="clip1">
+  <path d="M 0 0 L 27.578125 0 L 27.578125 22 L 0 22 Z M 0 0 "/>
+</clipPath>
+</defs>
+<g id="surface1">
+<g clip-path="url(#clip1)" clip-rule="nonzero">
+<path style="fill:none;stroke-width:2.667;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(23.921569%,5.098039%,45.882353%);stroke-opacity:1;stroke-miterlimit:4;" d="M 24.296735 7.331861 L 12.145787 2.445652 L 1.517578 7.331861 L 1.517578 26.886889 L 12.150949 22.000679 M 24.296735 7.331861 L 34.924944 2.445652 L 34.924944 22.000679 L 24.296735 26.886889 L 12.145787 22.000679 M 12.145787 22.000679 L 12.145787 2.445652 M 24.296735 26.891984 L 24.296735 7.331861 " transform="matrix(0.756757,0,0,0.766667,0,0)"/>
+</g>
+</g>
+</svg>
