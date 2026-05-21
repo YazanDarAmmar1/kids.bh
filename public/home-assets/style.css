@@ -73,7 +73,6 @@ body {
     font-size: 52px;
     font-weight: 900;
     color: #2d1b6e;
-    letter-spacing: 3px;
     line-height: 1;
     text-align: center;
     width: 100%;
@@ -150,7 +149,7 @@ body {
 /* ── Filters ── */
 .kb-hint {
     font-size: 12px;
-    color: #aaa;
+    color: #2d1b6e;
     font-weight: 600;
     margin-bottom: 10px;
     display: flex;
@@ -195,7 +194,7 @@ body {
 
 .c-fitness {
     background: #03c157;
-    color: #052e16;
+    color: #2d1b6e;
 }
 
 .c-basketball {
@@ -205,7 +204,7 @@ body {
 
 .c-volleyball {
     background: #d9d0f0;
-    color: #5a4a9a;
+    color: #2d1b6e;
 }
 
 .c-art {
