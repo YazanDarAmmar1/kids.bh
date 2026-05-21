@@ -1,3 +1,24 @@
+@push('head')
+    {{-- Preload maps --}}
+    @foreach($maps as $src)
+        <link rel="preload" as="image" href="{{ asset($src) }}">
+    @endforeach
+
+    {{-- Preload cards --}}
+    @foreach($cards as $sportCards)
+        @foreach($sportCards as $card)
+            <link rel="preload" as="image" href="{{ asset($card['svg']) }}">
+        @endforeach
+    @endforeach
+
+    {{-- Preload list images --}}
+    @foreach(['football','swimming','fitness','basketball','volleyball','art'] as $type)
+        @foreach($this->filtered($type) as $academy)
+            <link rel="preload" as="image" href="{{ asset($academy['img']) }}">
+            <link rel="preload" as="image" href="{{ asset($academy['logo']) }}">
+        @endforeach
+    @endforeach
+@endpush
 <div x-data="{
     filter: new URLSearchParams(window.location.search).get('filter') || 'football',
     view: new URLSearchParams(window.location.search).get('view') || 'list',
@@ -31,19 +52,24 @@
     <div class="kb-filters">
         <div class="kb-hint">Select your Game</div>
         <div class="kb-chips">
-            <div class="kb-chip c-football" :class="filter === 'football' ? 'active' : 'passive'" @click="filter = 'football'">
+            <div class="kb-chip c-football" :class="filter === 'football' ? 'active' : 'passive'"
+                 @click="filter = 'football'">
                 <img src="{{ asset('home-assets/images/football.svg') }}" class="kb-chip-icon"> Football
             </div>
-            <div class="kb-chip c-swimming" :class="filter === 'swimming' ? 'active' : 'passive'" @click="filter = 'swimming'">
+            <div class="kb-chip c-swimming" :class="filter === 'swimming' ? 'active' : 'passive'"
+                 @click="filter = 'swimming'">
                 <img src="{{ asset('home-assets/images/swm.svg') }}" class="kb-chip-icon"> Swimming
             </div>
-            <div class="kb-chip c-basketball" :class="filter === 'basketball' ? 'active' : 'passive'" @click="filter = 'basketball'">
+            <div class="kb-chip c-basketball" :class="filter === 'basketball' ? 'active' : 'passive'"
+                 @click="filter = 'basketball'">
                 <img src="{{ asset('home-assets/images/basket.svg') }}" class="kb-chip-icon"> Basketball
             </div>
-            <div class="kb-chip c-fitness" :class="filter === 'fitness' ? 'active' : 'passive'" @click="filter = 'fitness'">
+            <div class="kb-chip c-fitness" :class="filter === 'fitness' ? 'active' : 'passive'"
+                 @click="filter = 'fitness'">
                 <img src="{{ asset('home-assets/images/run.svg') }}" class="kb-chip-icon"> Fitness
             </div>
-            <div class="kb-chip c-volleyball" :class="filter === 'volleyball' ? 'active' : 'passive'" @click="filter = 'volleyball'">
+            <div class="kb-chip c-volleyball" :class="filter === 'volleyball' ? 'active' : 'passive'"
+                 @click="filter = 'volleyball'">
                 <img src="{{ asset('home-assets/images/voll.svg') }}" class="kb-chip-icon"> Volleyball
             </div>
             <div class="kb-chip c-art" :class="filter === 'art' ? 'active' : 'passive'" @click="filter = 'art'">
@@ -65,7 +91,11 @@
                         <div class="kb-lcard-body">
                             <div class="kb-lcard-name">{{ $academy['name'] }}</div>
                             <div class="kb-lcard-loc">
-                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#f5b429"/></svg>
+                                <svg viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                                        fill="#f5b429"/>
+                                </svg>
                                 {{ $academy['location'] }}
                             </div>
                             <div class="kb-lcard-btn" style="background:{{ $academy['btn'] }};">
