@@ -89,7 +89,7 @@ class Home extends Component
         ];
 
         return collect($all)
-            ->where('type', $this->filter)
+            ->where('type', $type)
             ->values()
             ->toArray();
     }
